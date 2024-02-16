@@ -18,6 +18,12 @@ To run the container you can use the following script:
 ### 3. Setting up services
 If you are changing anything in docker yml definition for RabbitMQ then you also should configure services to reflect those changes.
 It can be done by changing **app.config** for each service that is using RabbitMQ.
+(WARNING) This changes are applied at build time. If you want to change configuration 
+after build is done then you should change dll.config file inside bin folder.
+The following are **RUNTIME** config files
+**MicroservicesTestTask.DataProcessorService.dll.config for data processor**
+**MicroservicesTestTask.FileParserService.dll.config for file parser**
+
 The following values are configurable:
 1. **RabbitMQClientHostName** for remote hostname configuration
 2. **RabbitMQClientPort for** remote host port configuration
